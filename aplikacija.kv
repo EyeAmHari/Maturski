@@ -1,0 +1,62 @@
+MainInterface:
+
+<MainInterface>:
+    BoxLayout:
+        orientation:'vertical'
+
+        BoxLayout:
+            orientation:'vertical'
+            size_hint:1,None
+            height:'100dp'
+            Label:
+                font_name: 'fonts/LCD-BOLD.TTF'
+                text:'WELCOME!'
+            Label:
+                font_name: 'fonts/LCD-BOLD.TTF'
+                text:'Having a good day?'
+            Label:
+                font_name: 'fonts/LCD-BOLD.TTF'
+                text:'Download a song to feel better!'
+            Label:
+                font_name: 'fonts/LCD-BOLD.TTF'
+                text:'Paste the song link bellow:'
+        TextInput:
+            id: song_link
+            multiline: False
+            size_hint:1,None
+            height:'30dp'
+        Label:
+            text:''
+            size_hint:1,None
+            height:'20dp'
+        Button:
+            text: "DOWNLOAD"
+            font_name: 'fonts/LCD-BOLD.TTF'
+            on_release: root.submit_link(song_link.text)
+            size_hint:None,None
+            height:'50dp'
+            width:'120dp'
+            pos_hint: {"center_x":.5}
+        Label:
+            text:root.connection_message
+            font_name:'fonts/LCD-BOLD.TTF'
+        BoxLayout:
+            orientation:'vertical'
+            Label:
+                font_name: 'fonts/LCD-BOLD.TTF'
+                text:'Visit my GitHub for more projects:'
+            BoxLayout:
+                orientation:'vertical'
+                Image:
+                    source: 'images/githublogo.png'
+                Label:
+                    font_name: 'fonts/LCD-BOLD.TTF'
+                    text:'github.com/EyeAmHari'
+                Button:
+                    text:'Visit'
+                    font_name:'fonts/LCD-BOLD.TTF'
+                    on_press:root.open_github()
+        Label:
+            text:''
+            size_hint:1, None
+            height:'30dp'
